@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body {
+                background-color: lightsteelblue;
+            }
+            
+            div {
+                background-color: lightskyblue;
+            }
+        </style>
+        <style>
+            * {
+                box-sizing: content-box;
+            }
+            
+            .column {
+                float: left;
+                width: 30%;
+                padding: 5px;
+            }
+            
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+        </style>
+        <title>Compsoft Technologies</title>
+    </head>
+
+    <body>
+        <p><img src="logo.png" alt="logo" style="width:100px;heigth:100px;margin-rigth:30px;">
+            <h1>Compsoft Technologies</h1>
+        </p>
+            <div class="row">
+                <div class="column">
+
+                    <h2>Web Development</h2>
+                    <p>Creative web solutions blended with latest technologies form the right base for innovative businesses.
+
+                    </p>
+                </div>
+                <div class="column">
+
+                    <h2>Security</h2>
+                    <p>Our Cyber Security Consulting back your organization with years of experience working on projects for some of the world’s largest organizations. Tap into that expertise on-demand to support your projects or as you implement technical
+                        controls
+                    </p>
+                </div>
+                <div class="column">
+
+                    <h2>Mobility</h2>
+                    <p>We believe that the look of a website or mobile app is as important as it’s functioning.So we make sure to design the app that looks nice and functions well and runs stable on your device.</p>
+                </div>
+            </div>
+        </form>
+        <a href="website.html ">Home</a><br></br>
+        <a href="services.html">services</a><br></br>
+        <a href="contactus.html">contactus</a>
+</body>
+
+</html>

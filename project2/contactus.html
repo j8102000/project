@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        form {
+            border: 3px solid #f1f1f1;
+        }
+        
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+        
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+        
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+        
+        .container {
+            padding: 16px;
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <h2>Contact Us</h2>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAdfXboQXJkMGDmE42w_e-DXe6p8389EOY",
+          authDomain: "website-8075f.firebaseapp.com",
+          projectId: "website-8075f",
+          storageBucket: "website-8075f.appspot.com",
+          messagingSenderId: "335291037836",
+          appId: "1:335291037836:web:7d4ad884b2682de4b9a3a9",
+          measurementId: "G-H48C5NGVT9"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        function writeData(){ 
+            firebase.database().ref("User").set({ 
+                name:document.getElementById("name").value, 
+                phoneno:document.getElementById("phone").value, 
+                email:document.getElementById("email").value,
+                text:document.getElementById("message").value });
+            }
+      </script>
+
+    <form action="" method="post">
+        <div class="container">
+            <label for="name"><b>Username</b></label>
+            <input type="text" placeholder="Name" name="name" id="name" required>
+            <label for="phone"><b>Phone no</b></label>
+            <input type="tel" placeholder="Phone no" name="phone" id="phone" required>
+            <label for="email"><b>email</b></label>
+            <input type="email" placeholder="email" name="email" id="email" required>
+            <label for="text"><b>Write your message here</b></label>
+            <input type="text" placeholder="write your message here" name="message" id="message" required>
+            <button onclick="writeData()">Submit</button>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+        </div>
+    </form>
+
+</body>
+
+</html>
